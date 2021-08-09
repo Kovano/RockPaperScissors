@@ -5,7 +5,7 @@ open class Person () {
     var name : String? = null
     var hitPoints : Int = 100
 
-    fun hitPointsDown (hitPoints: Int) : Int {
+    fun hitPointsDown () : Int {
         this.hitPoints -= 10
        return hitPoints
     }
