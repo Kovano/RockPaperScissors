@@ -9,7 +9,6 @@ class MainActivity : AppCompatActivity() {
 
     var knight = Person()
     var dragon = Person()
-    private lateinit var dragonTurn : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,17 +24,37 @@ class MainActivity : AppCompatActivity() {
 
     private fun rockSnackBar() {
         icRock.setOnClickListener(){
-            var thisDragonTurn = randomizerDragonTurn();
+            var thisDragonTurn = randomizerDragonTurn()
             Snackbar.make(it,"Раунд! Камень VS $thisDragonTurn", Snackbar.LENGTH_SHORT).show()
-            dragon.hitPointsDown()
-            textHPDragon.text = dragon.hitPoints.toString()
+            when (thisDragonTurn){
+//                "Камень" -> do nothing
+                "Ножницы" -> {dragon.hitPointsDown(); textHPDragon.text = dragon.hitPoints.toString()}
+                "Бумага" -> {knight.hitPointsDown(); textHPKnight.text = knight.hitPoints.toString()}
+                }
+            }
+        }
+
+    private fun scissorsSnackBar(){
+        icScissors.setOnClickListener(){
+            var thisDragonTurn = randomizerDragonTurn()
+            Snackbar.make(it,"Раунд! Ножницы VS $thisDragonTurn", Snackbar.LENGTH_SHORT).show()
+            when (thisDragonTurn){
+                "Камень" -> {knight.hitPointsDown(); textHPKnight.text = knight.hitPoints.toString()}
+//                "Ножницы" ->
+                "Бумага" -> {dragon.hitPointsDown(); textHPDragon.text = dragon.hitPoints.toString()}
+            }
         }
     }
-    private fun scissorsSnackBar(){
-
-    }
     private fun paperSnackBar(){
-
+        icPaper.setOnClickListener(){
+            var thisDragonTurn = randomizerDragonTurn()
+            Snackbar.make(it,"Раунд! Бумага VS $thisDragonTurn", Snackbar.LENGTH_SHORT).show()
+            when (thisDragonTurn){
+                "Камень" -> {dragon.hitPointsDown(); textHPDragon.text = dragon.hitPoints.toString()}
+                "Ножницы" -> {knight.hitPointsDown(); textHPKnight.text = knight.hitPoints.toString()}
+//                "Бумага" ->
+            }
+        }
     }
 
     private fun randomizerDragonTurn():String {
@@ -47,9 +66,6 @@ class MainActivity : AppCompatActivity() {
             2 -> dragonTurn = "Ножницы"
             3 -> dragonTurn = "Бумага"
         }
-
-
-
         return dragonTurn
     }
 }
