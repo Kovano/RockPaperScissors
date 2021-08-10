@@ -14,14 +14,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311"
         app:srcCompat="@drawable/a00_00_knight" />
 
     <ImageView
         android:id="@+id/icDragon"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="100dp"
         app:layout_constraintBottom_toBottomOf="@+id/icKnight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/icKnight"
@@ -63,40 +62,41 @@
 
     <ImageView
         android:id="@+id/icRock"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/icScissors"
-        app:layout_constraintEnd_toStartOf="@+id/icScissors"
-        app:layout_constraintTop_toTopOf="@+id/icScissors"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/icScissors"
+        app:layout_constraintEnd_toEndOf="@+id/icScissors"
+        app:layout_constraintStart_toStartOf="@+id/icScissors"
         app:srcCompat="@drawable/a00_02_01_rock" />
 
     <ImageView
         android:id="@+id/icScissors"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="@+id/icEmpty"
-        app:layout_constraintEnd_toEndOf="@+id/icKnight"
-        app:layout_constraintStart_toStartOf="@+id/icKnight"
-        app:layout_constraintTop_toBottomOf="@+id/icDragon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/icKnight"
+        app:layout_constraintEnd_toStartOf="@+id/icKnight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/icKnight"
         app:srcCompat="@drawable/a00_02_03_scissors" />
 
     <ImageView
         android:id="@+id/icPaper"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/icScissors"
-        app:layout_constraintStart_toEndOf="@+id/icScissors"
-        app:layout_constraintTop_toTopOf="@+id/icScissors"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/icScissors"
+        app:layout_constraintStart_toStartOf="@+id/icScissors"
+        app:layout_constraintTop_toBottomOf="@+id/icScissors"
         app:srcCompat="@drawable/a00_02_02_paper" />
 
     <ImageView
         android:id="@+id/icEmpty"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="25dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/icDragon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icDragon"
+        app:layout_constraintStart_toEndOf="@+id/icDragon"
+        app:layout_constraintTop_toTopOf="@+id/icDragon"
         app:srcCompat="@drawable/a00_02_04_empty" />
 </androidx.constraintlayout.widget.ConstraintLayout>
