@@ -31,6 +31,12 @@ class MainActivity : AppCompatActivity() {
                 "Ножницы" -> {dragon.hitPointsDown(); textHPDragon.text = dragon.hitPoints.toString()}
                 "Бумага" -> {knight.hitPointsDown(); textHPKnight.text = knight.hitPoints.toString()}
                 }
+            when (dragon.hitPoints){
+                0 ->  Snackbar.make(it,"You win", Snackbar.LENGTH_LONG).show()
+            }
+            when (knight.hitPoints){
+                0 ->  Snackbar.make(it,"You lose", Snackbar.LENGTH_LONG).show()
+            }
             }
         }
 
@@ -43,6 +49,12 @@ class MainActivity : AppCompatActivity() {
 //                "Ножницы" ->
                 "Бумага" -> {dragon.hitPointsDown(); textHPDragon.text = dragon.hitPoints.toString()}
             }
+            when (dragon.hitPoints){
+                0 ->  Snackbar.make(it,"You win", Snackbar.LENGTH_LONG).show()
+            }
+            when (knight.hitPoints){
+                0 ->  Snackbar.make(it,"You lose", Snackbar.LENGTH_LONG).show()
+            }
         }
     }
     private fun paperSnackBar(){
@@ -53,6 +65,12 @@ class MainActivity : AppCompatActivity() {
                 "Камень" -> {dragon.hitPointsDown(); textHPDragon.text = dragon.hitPoints.toString()}
                 "Ножницы" -> {knight.hitPointsDown(); textHPKnight.text = knight.hitPoints.toString()}
 //                "Бумага" ->
+            }
+            when (dragon.hitPoints){
+                0 ->  Snackbar.make(it,"You win", Snackbar.LENGTH_LONG).show()
+            }
+            when (knight.hitPoints){
+                0 ->  Snackbar.make(it,"You lose", Snackbar.LENGTH_LONG).show()
             }
         }
     }
