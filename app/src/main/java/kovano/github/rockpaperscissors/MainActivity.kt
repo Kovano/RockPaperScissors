@@ -1,6 +1,5 @@
 package kovano.github.rockpaperscissors
 
-import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -26,10 +25,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun rockSnackBar() {
         icRock.setOnClickListener(){
-            dragonTurn = randomiserDragonTurn();
-            Snackbar.make(it,"Раунд! Камень VS $dragonTurn", Snackbar.LENGTH_SHORT).show()
+            var thisDragonTurn = randomizerDragonTurn();
+            Snackbar.make(it,"Раунд! Камень VS $thisDragonTurn", Snackbar.LENGTH_SHORT).show()
             dragon.hitPointsDown()
-            println(dragon.hitPoints)
             textHPDragon.text = dragon.hitPoints.toString()
         }
     }
@@ -40,8 +38,18 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun randomiserDragonTurn():String {
-        var dragonTurn2 : String =  "Камень"
-        return dragonTurn2
+    private fun randomizerDragonTurn():String {
+
+        var dragonTurnInt : Int = (0..4).random()
+        var dragonTurn : String =  "Камень"
+        when (dragonTurnInt){
+            1 -> dragonTurn = "Камень"
+            2 -> dragonTurn = "Ножницы"
+            3 -> dragonTurn = "Бумага"
+        }
+
+
+
+        return dragonTurn
     }
 }
