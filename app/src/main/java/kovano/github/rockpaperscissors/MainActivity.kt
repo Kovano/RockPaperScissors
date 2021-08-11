@@ -1,8 +1,8 @@
 package kovano.github.rockpaperscissors
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -35,15 +35,14 @@ class MainActivity : AppCompatActivity() {
                 "Бумага" -> {icEmpty.setImageResource(R.drawable.a00_02_02_paperred);knight.hitPointsDown(); textHPKnight.text = knight.hitPoints.toString()}
                 }
             when (dragon.hitPoints){
-                0 ->  Snackbar.make(it,"You win", Snackbar.LENGTH_LONG).show()
+                0 ->  Snackbar.make(it,"You win", Snackbar.LENGTH_INDEFINITE).setAction("Начать игру заново"){knight.hitPoints = 100; textHPKnight.text = knight.hitPoints.toString(); dragon.hitPoints = 100;textHPDragon.text = dragon.hitPoints.toString()}.setActionTextColor(Color.GREEN).show()
             }
             when (knight.hitPoints){
-                0 ->  Snackbar.make(it,"You lose", Snackbar.LENGTH_LONG).show()
+                0 ->  Snackbar.make(it,"You lose", Snackbar.LENGTH_INDEFINITE).setAction("Начать игру заново"){knight.hitPoints = 100; textHPKnight.text = knight.hitPoints.toString(); dragon.hitPoints = 100;textHPDragon.text = dragon.hitPoints.toString()}.setActionTextColor(Color.GREEN).show()
             }
             icEmpty.postDelayed({icEmpty.setImageResource(R.drawable.a00_02_05_random)
                 icRock.setImageResource(R.drawable.a00_02_01_rock)},500)
             }
-
         }
 
     private fun scissorsSnackBar(){
@@ -57,10 +56,10 @@ class MainActivity : AppCompatActivity() {
                 "Бумага" -> {icEmpty.setImageResource(R.drawable.a00_02_02_paperred); dragon.hitPointsDown(); textHPDragon.text = dragon.hitPoints.toString()}
             }
             when (dragon.hitPoints){
-                0 ->  Snackbar.make(it,"You win", Snackbar.LENGTH_LONG).show()
+                0 ->  Snackbar.make(it,"You win", Snackbar.LENGTH_INDEFINITE).setAction("Начать игру заново"){knight.hitPoints = 100; textHPKnight.text = knight.hitPoints.toString(); dragon.hitPoints = 100;textHPDragon.text = dragon.hitPoints.toString()}.setActionTextColor(Color.GREEN).show()
             }
             when (knight.hitPoints){
-                0 ->  Snackbar.make(it,"You lose", Snackbar.LENGTH_LONG).show()
+                0 ->  Snackbar.make(it,"You lose", Snackbar.LENGTH_INDEFINITE).setAction("Начать игру заново"){knight.hitPoints = 100; textHPKnight.text = knight.hitPoints.toString(); dragon.hitPoints = 100;textHPDragon.text = dragon.hitPoints.toString()}.setActionTextColor(Color.GREEN).show()
             }
             icEmpty.postDelayed({icEmpty.setImageResource(R.drawable.a00_02_05_random)
                 icScissors.setImageResource(R.drawable.a00_02_03_scissors)},500)
@@ -77,10 +76,10 @@ class MainActivity : AppCompatActivity() {
                 "Бумага" -> icEmpty.setImageResource(R.drawable.a00_02_02_paperred)
             }
             when (dragon.hitPoints){
-                0 ->  Snackbar.make(it,"You win", Snackbar.LENGTH_LONG).show()
+                0 ->  Snackbar.make(it,"You win", Snackbar.LENGTH_INDEFINITE).setAction("Начать игру заново"){knight.hitPoints = 100; textHPKnight.text = knight.hitPoints.toString(); dragon.hitPoints = 100;textHPDragon.text = dragon.hitPoints.toString()}.setActionTextColor(Color.GREEN).show()
             }
             when (knight.hitPoints){
-                0 ->  Snackbar.make(it,"You lose", Snackbar.LENGTH_LONG).show()
+                0 ->  Snackbar.make(it,"You lose", Snackbar.LENGTH_INDEFINITE).setAction("Начать игру заново"){knight.hitPoints = 100; textHPKnight.text = knight.hitPoints.toString(); dragon.hitPoints = 100;textHPDragon.text = dragon.hitPoints.toString()}.setActionTextColor(Color.GREEN).show()
             }
             icEmpty.postDelayed({icEmpty.setImageResource(R.drawable.a00_02_05_random)
                 icPaper.setImageResource(R.drawable.a00_02_02_paper)},500)
